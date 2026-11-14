@@ -1,9 +1,8 @@
-
-# SSH SERVER DEBIAN
+SSH SERVER DEBIAN
 
 Dokumentasi instalasi dan konfigurasi SSH Server pada Debian menggunakan VMware.
 
-## 1. Persiapan
+1. Persiapan
 
 Perangkat dan aplikasi yang dibutuhkan:
 
@@ -12,107 +11,101 @@ Perangkat dan aplikasi yang dibutuhkan:
 - Windows PowerShell
 - Koneksi jaringan
 
-## 2. Update Debian
+2. Update Debian
 
 Masuk sebagai root:
 
-```bash
+bash
 su -
-```
 
 Update daftar paket:
 
-```bash
+bash
 apt update
-```
+
 
 Upgrade sistem:
 
-```bash
+bash
 apt upgrade -y
-```
 
-## 3. Instalasi SSH Server
+
+3. Instalasi SSH Server
 
 Instal OpenSSH Server:
 
-```bash
+bash
 apt install openssh-server -y
-```
 
-## 4. Mengaktifkan SSH Server
+
+4. Mengaktifkan SSH Server
 
 Aktifkan SSH:
 
-```bash
+bash
 systemctl enable ssh
-```
+
 
 Jalankan SSH:
 
-```bash
+bash
 systemctl start ssh
-```
+
 
 Periksa status SSH:
 
-```bash
+bash
 systemctl status ssh
-```
 
-Jika muncul `active (running)`, SSH berhasil berjalan.
+Jika muncul active (running), SSH berhasil berjalan.
 
-## 5. Melihat IP Address Debian
+5. Melihat IP Address Debian
 
 Gunakan perintah:
 
-```bash
+bash
 ip addr
-```
+
 
 Catat alamat IP Debian yang muncul.
 
 Contoh:
 
-```text
 192.168.1.10
-```
 
-## 6. Menghubungkan SSH melalui Windows
+
+6. Menghubungkan SSH melalui Windows
 
 Buka Windows PowerShell.
 
 Masukkan perintah:
 
-```powershell
+powershell
 ssh username@192.168.1.10
-```
 
-Ganti `username` dengan username Debian dan IP dengan alamat Debian milikmu.
+Ganti username dengan username Debian dan IP dengan alamat Debian milikmu.
 
 Contoh:
 
-```powershell
+powershell
 ssh hervayona@192.168.1.10
-```
 
-Ketik `yes` jika muncul konfirmasi koneksi pertama kali, kemudian masukkan password Debian.
+Ketik yes jika muncul konfirmasi koneksi pertama kali, kemudian masukkan password Debian.
 
-## 7. Pengujian SSH
+7. Pengujian SSH
 
 Jika berhasil masuk, jalankan:
 
-```bash
+bash
 hostname
-```
 
 Untuk keluar dari koneksi SSH:
 
-```bash
+bash
 exit
-```
 
-## 8. Perintah SSH
+
+8. Perintah SSH
 
 | Perintah | Fungsi |
 |---|---|
@@ -124,14 +117,14 @@ exit
 | `hostname` | Melihat nama komputer |
 | `exit` | Keluar dari SSH |
 
-## KESIMPULAN
+KESIMPULAN
 
 SSH Server merupakan layanan yang memungkinkan pengguna mengakses dan mengelola Debian dari komputer lain melalui jaringan. Dengan OpenSSH Server, pengelolaan Debian dapat dilakukan melalui Windows PowerShell secara jarak jauh.
 
----
 
-**Author:** Hervayona
 
-**Project:** SSH Server Debian
+Author: Hervayona
 
-**Platform:** Debian Linux | VMware | Windows PowerShell
+Project: SSH Server Debian
+
+Platform: Debian Linux | VMware | Windows PowerShell
