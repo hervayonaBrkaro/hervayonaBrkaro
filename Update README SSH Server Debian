@@ -1,0 +1,137 @@
+
+# SSH SERVER DEBIAN
+
+Dokumentasi instalasi dan konfigurasi SSH Server pada Debian menggunakan VMware.
+
+## 1. Persiapan
+
+Perangkat dan aplikasi yang dibutuhkan:
+
+- VMware Workstation
+- Debian Linux
+- Windows PowerShell
+- Koneksi jaringan
+
+## 2. Update Debian
+
+Masuk sebagai root:
+
+```bash
+su -
+```
+
+Update daftar paket:
+
+```bash
+apt update
+```
+
+Upgrade sistem:
+
+```bash
+apt upgrade -y
+```
+
+## 3. Instalasi SSH Server
+
+Instal OpenSSH Server:
+
+```bash
+apt install openssh-server -y
+```
+
+## 4. Mengaktifkan SSH Server
+
+Aktifkan SSH:
+
+```bash
+systemctl enable ssh
+```
+
+Jalankan SSH:
+
+```bash
+systemctl start ssh
+```
+
+Periksa status SSH:
+
+```bash
+systemctl status ssh
+```
+
+Jika muncul `active (running)`, SSH berhasil berjalan.
+
+## 5. Melihat IP Address Debian
+
+Gunakan perintah:
+
+```bash
+ip addr
+```
+
+Catat alamat IP Debian yang muncul.
+
+Contoh:
+
+```text
+192.168.1.10
+```
+
+## 6. Menghubungkan SSH melalui Windows
+
+Buka Windows PowerShell.
+
+Masukkan perintah:
+
+```powershell
+ssh username@192.168.1.10
+```
+
+Ganti `username` dengan username Debian dan IP dengan alamat Debian milikmu.
+
+Contoh:
+
+```powershell
+ssh hervayona@192.168.1.10
+```
+
+Ketik `yes` jika muncul konfirmasi koneksi pertama kali, kemudian masukkan password Debian.
+
+## 7. Pengujian SSH
+
+Jika berhasil masuk, jalankan:
+
+```bash
+hostname
+```
+
+Untuk keluar dari koneksi SSH:
+
+```bash
+exit
+```
+
+## 8. Perintah SSH
+
+| Perintah | Fungsi |
+|---|---|
+| `systemctl start ssh` | Menjalankan SSH |
+| `systemctl stop ssh` | Menghentikan SSH |
+| `systemctl restart ssh` | Restart SSH |
+| `systemctl status ssh` | Mengecek status SSH |
+| `ip addr` | Melihat IP Debian |
+| `hostname` | Melihat nama komputer |
+| `exit` | Keluar dari SSH |
+
+## KESIMPULAN
+
+SSH Server merupakan layanan yang memungkinkan pengguna mengakses dan mengelola Debian dari komputer lain melalui jaringan. Dengan OpenSSH Server, pengelolaan Debian dapat dilakukan melalui Windows PowerShell secara jarak jauh.
+
+---
+
+**Author:** Hervayona
+
+**Project:** SSH Server Debian
+
+**Platform:** Debian Linux | VMware | Windows PowerShell
